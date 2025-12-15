@@ -1,1 +1,272 @@
-<p>travel-request works!</p>
+<div class="container-fluid">
+  <form [formGroup]="travelForm">
+    <section class="p-2 mt-2">
+      <div class="card">
+        <div class="card-header"><strong>Local Travel Request Form</strong></div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Travel Req No</label>
+                </div>
+                <div class="col-md-7">
+                  <input type="text" class="form-control" formControlName="travelReqNo" readonly />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Travel Date</label>
+                </div>
+                <div class="col-md-7">
+                  <input
+                    type="date"
+                    class="form-control"
+                    formControlName="travelDate"
+                    [class.is-invalid]="f['travelDate'].touched && f['travelDate'].invalid"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">PendingWith</label>
+                </div>
+                <div class="col-md-7">
+                  <input type="text" class="form-control" formControlName="pendingWith" readonly />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-1">
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Employee Name</label>
+                </div>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="employeeName"
+                    [class.is-invalid]="f['employeeName'].touched && f['employeeName'].invalid"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Number</label>
+                </div>
+                <div class="col-md-7">
+                  <input type="number" class="form-control" formControlName="numberField" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Line Manager</label>
+                </div>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="lineManager"
+                    [class.is-invalid]="f['lineManager'].touched && f['lineManager'].invalid"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Cluster</label>
+                </div>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="cluster"
+                    [class.is-invalid]="f['cluster'].touched && f['cluster'].invalid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-1">
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Company</label>
+                </div>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="company"
+                    [class.is-invalid]="f['company'].touched && f['company'].invalid"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Department</label>
+                </div>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="department"
+                    [class.is-invalid]="f['department'].touched && f['department'].invalid"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Location</label>
+                </div>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="location"
+                    [class.is-invalid]="f['location'].touched && f['location'].invalid"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-5">
+                  <label class="form-label">Status</label>
+                </div>
+                <div class="col-md-7">
+                  <input type="text" class="form-control" formControlName="status" readonly />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-1">
+            <div class="col-md-2">
+              <label class="form-label">Travel Description</label>
+            </div>
+            <div class="col-md-10">
+              <textarea
+                cols="3"
+                class="form-control"
+                formControlName="travelDescription"
+                [class.is-invalid]="
+                  f['travelDescription'].touched && f['travelDescription'].invalid
+                "
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-11">
+              <table class="table table-bordered mt-2">
+                <thead>
+                  <tr>
+                    <th>Confirm</th>
+                    <th>From City</th>
+                    <th>To City</th>
+                    <th>Departure Date</th>
+                    <th>Remarks</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody formArrayName="travelDetails">
+                  @for (row of travelDetails.controls; track $index) {
+                  <tr [formGroupName]="$index">
+                    <td class="text-center">
+                      <input type="checkbox" formControlName="confirm" />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="fromCity"
+                        [class.is-invalid]="
+                          row.get('fromCity')?.touched && row.get('fromCity')?.invalid
+                        "
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="toCity"
+                        [class.is-invalid]="
+                          row.get('toCity')?.touched && row.get('toCity')?.invalid
+                        "
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="date"
+                        class="form-control"
+                        formControlName="departureDate"
+                        [class.is-invalid]="
+                          row.get('departureDate')?.touched && row.get('departureDate')?.invalid
+                        "
+                      />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="remarks" />
+                    </td>
+                    <td class="text-center">
+                      <button
+                        type="button"
+                        class="px-2 bg-dark-subtle"
+                        (click)="removeTravelRow($index)"
+                        [disabled]="travelDetails.length === 1"
+                      >
+                        -
+                      </button>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+            <div class="col-md-1">
+              <div class="mt-3">
+                <button type="button" class="px-2 bg-dark-subtle" (click)="addTravelRow()">
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-2">
+      <div class="mt-2 d-flex justify-content-end w-100">
+        <div class="d-flex gap-3 w-50 justify-content-end">
+          <button type="button" class="w-25 border-1 rounded-1">Approve</button>
+          <button type="button" class="w-25 border-1 rounded-1">Reject</button>
+          <button type="button" class="w-25 border-1 rounded-1" (click)="submitForm()">
+            Submit
+          </button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

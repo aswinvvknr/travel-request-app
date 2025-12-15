@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TravelRequest } from './components/travel-request/travel-request';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, TravelRequest],
   template: `
-    <h1>Welcome to {{ title() }}!</h1>
+    <app-travel-request />
 
     <router-outlet />
   `,
