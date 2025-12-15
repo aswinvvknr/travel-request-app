@@ -6,3 +6,16 @@
     outline: none !important;
     box-shadow: none !important;
 }
+
+.table-scroll-container {
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+}
+
+.table-scroll-container thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
+  z-index: 1;
+}
