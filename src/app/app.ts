@@ -4,10 +4,8 @@ import { TravelRequest } from './components/travel-request/travel-request';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TravelRequest],
+  imports: [RouterOutlet],
   template: `
-    <app-travel-request />
-
     <router-outlet />
   `,
   styles: [],
